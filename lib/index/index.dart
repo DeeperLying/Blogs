@@ -19,7 +19,11 @@ class _BottomNavigationWidgetState extends State<CreateStatefuleWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  final List<Widget> _childrenPage = [HomePage(), MatchPage(), UserPage()];
+  final List<Widget> _childrenPage = [
+    HomePage(),
+    MatchPage(),
+    UserPage()
+  ];
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;

@@ -31,6 +31,9 @@ class MyApp extends StatelessWidget {
       return new MaterialApp(
         title: 'Startup Name Generator',
         routes: _routes,
+        theme: new ThemeData(
+          primaryColor: Colors.white,
+        ),
         onGenerateRoute: _routeGenerator,
         // home: new Myapp(),
       );

@@ -5,16 +5,19 @@ class HomeRecommend extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
-      body: new Column(
-        children: <Widget>[
-          new Text('-'),
-          new Text('3'),
-          new Container(
-            width: 100,
-            color: Colors.blue
-          )
-        ],
-      ),
+      body: new Container(
+        color: Colors.blue[50],
+        child: Align(
+          widthFactor: 4,
+          heightFactor: 4,
+          alignment: Alignment(1, -1),
+          child: new Container(
+            width: 30,
+            height: 30,
+            color: Colors.green
+          ),
+        ),
+      )
     );
   }
 }

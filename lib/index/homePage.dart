@@ -30,14 +30,71 @@ class TabBarDemoState extends State<HomePage> with SingleTickerProviderStateMixi
     _tabController = new TabController(vsync: this, length: 4);
   }
 
+  Widget barSearch() {
+    return new Container(
+      child: new Row(
+        children: <Widget>[
+          new Expanded(
+              flex:1,
+              child: new Text('赛事')
+          ),
+          new Expanded(
+              flex: 1,
+              child: new Container(
+                  /*child: new Text(
+                      '搜索赛事、比赛',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: const Color(0xFFDADADA),
+                      )
+                  ),*/
+                  child: new Stack(
+                    children: <Widget>[
+                      new Positioned(
+                        right: 10,
+                        bottom: 10,
+                          child: Container(
+                            width: 24,
+                            height: 24,
+                            child:new Icon(
+                              Icons.search,
+                              color: Colors.black,
+                              size: 30,
+                            )
+                          )
+                      ),
+                      new Center(
+                          child:new Text(
+                              '搜索赛事、比赛',
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: const Color(0xFFDADADA),
+                              )
+                          )
+                      )
+                    ],
+                  ),
+                decoration: new BoxDecoration(
+                  borderRadius: const BorderRadius.all(const Radius.circular(50.0)),
+                  color: const Color(0xFFFAFAFA),
+                ),
+                height: 45,
+              ),
+          )
+        ],
+      ),
+      height: 45,
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
       appBar: new AppBar(
-        title: new Text('首页'),
+        title: barSearch(),
         bottom: new TabBar(
-          tabs: tabs,
           controller: _tabController,
+          tabs: tabs,
         ),
       ),
       body: new TabBarView(
