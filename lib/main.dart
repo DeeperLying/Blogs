@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.white,
         ),
         onGenerateRoute: _routeGenerator,
+        navigatorKey: key,
         // home: new Myapp(),
       );
     }

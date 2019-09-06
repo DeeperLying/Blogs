@@ -16,6 +16,7 @@ class _SwiperViewState extends State<SwiperView> {
     Image.network('https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2726034926,4129010873&fm=26&gp=0.jpg', fit: BoxFit.cover,),
   ];
 
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -23,12 +24,10 @@ class _SwiperViewState extends State<SwiperView> {
   }
 
   Widget firstSwiperView() {
-
     final size =MediaQuery.of(context).size;
     final width = size.width;
     final height = size.height;
     final swiperHeight = width / 16 * 9;
-    print(width);
 
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -47,7 +46,9 @@ class _SwiperViewState extends State<SwiperView> {
         controller: SwiperController(),
         scrollDirection: Axis.horizontal,
         autoplay: true,
-        onTap: (index) => print('点击了第$index'),
+        onTap: (index) {
+          print('点击了第$index');
+        },
       ),
     );
   }
