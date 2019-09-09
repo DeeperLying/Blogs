@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 
 class SwiperView extends StatefulWidget {
+  SwiperView(String size) {
+   // print(size);
+  }
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState

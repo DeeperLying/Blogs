@@ -23,7 +23,7 @@ class HttpUtils {
   }
 
   /// 请求api
-  static Future<Map> request(String url, {data, method}) async {
+  static Future<Map<String, dynamic>> request(String url, {data, method}) async {
     data = data ?? {};
     method = method ?? "get";
     var dio = getInstance();
@@ -53,10 +53,7 @@ class HttpUtils {
               } else {
                 return message;
               }
-            } else {
-              return message;
             }
-          print(response.data["messages"]["serverTime"]);
           return response; // continue
         },
         onError: (DioError e) {
