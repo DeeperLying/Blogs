@@ -33,6 +33,7 @@ class _BottomNavigationWidgetState extends State<CreateStatefuleWidget> {
   Widget build(BuildContext context) {
     // TODO: implement build
     return new Scaffold(
+      // drawer: _drawer,
       body: _childrenPage[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[

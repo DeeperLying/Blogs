@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
   }
 }
 
-class TabBarDemoState extends State<HomePage> with SingleTickerProviderStateMixin {
+class TabBarDemoState extends State<HomePage> with SingleTickerProviderStateMixin {  //with SingleTickerProviderStateMixin 用它实现动画效果
   TabController _tabController;
   final list = <Widget>[
     HomeRecommend(),
@@ -25,11 +25,20 @@ class TabBarDemoState extends State<HomePage> with SingleTickerProviderStateMixi
     new Tab(text: '比赛', icon: new Icon(Icons.access_alarm)),
     new Tab(text: '装备', icon: new Icon(Icons.important_devices)),
   ];
+
+  @override
   void initState() {
     super.initState();
-    _tabController = new TabController(vsync: this, length: 4);
+    _tabController = new TabController(vsync: this, length: list.length);
   }
 
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget barSearch() {
     return new Container(
       child: new Row(
@@ -95,6 +104,9 @@ class TabBarDemoState extends State<HomePage> with SingleTickerProviderStateMixi
         bottom: new TabBar(
           controller: _tabController,
           tabs: tabs,
+          onTap: (index){
+            print(index);
+          },
         ),
       ),
       body: new TabBarView(

@@ -39,7 +39,7 @@ class ViewContainer extends StatefulWidget {
 }
 
 class _ViewContainer extends State<ViewContainer> {
-  String data = '';
+  String i;
   List<Widget> banner = [];
   final params = {
     "pageNum": 1,
@@ -55,7 +55,7 @@ class _ViewContainer extends State<ViewContainer> {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return new Text(data ? data: '=====');
+    return new Text(i ??= '999o');
   }
 
   void _initData() async {
